@@ -1,0 +1,180 @@
+@import "../../styles/variables.scss";
+
+@keyframes mask-play {
+  from {
+    mask-position: 0% 0;
+  }
+  to {
+    mask-position: 100% 0;
+  }
+}
+
+.lightbox,
+.lightbox-dark {
+  background: $white-90;
+  left: 0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    max-width: 1280px;
+    width: 90%;
+    height: 90vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  figure {
+    margin: 0;
+    position: relative;
+  }
+
+  figcaption {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    top: calc(100% + 1rem);
+    position: absolute;
+    width: 100%;
+
+    div {
+      &:nth-of-type(2) {
+        display: flex;
+        justify-content: space-between;
+        min-width: 100px;
+      }
+    }
+  }
+
+  h3 {
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    visibility: hidden;
+  }
+
+  a {
+    color: inherit;
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+.close-area {
+  height: 100vh;
+  width: 100vw;
+}
+
+.close-Btn {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: 2rem;
+  height: 4rem;
+  outline: none;
+  top: 2rem;
+  right: 2rem;
+  padding: 0;
+  position: fixed;
+  width: 4rem;
+  z-index: 100;
+}
+
+.navigator {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 40px;
+  outline: none;
+  text-align: center;
+  width: 40px;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  padding-left: 0.8rem;
+  position: relative;
+
+  &::before {
+    background: $black-20;
+    content: "";
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+  }
+}
+
+.image-wrapper {
+  background: $white;
+  transition: 1s ease-in;
+}
+
+.hidden {
+  .image-wrapper {
+    opacity: 0;
+    mask: url(../../images/nature-sprite.png);
+    mask-size: 2300% 100%;
+    animation: mask-play 1s steps(22) forwards;
+  }
+}
+
+.active {
+  .image-wrapper {
+    opacity: 1;
+    mask: url(../../images/nature-sprite.png);
+    mask-size: 2300% 100%;
+  }
+
+  img {
+    visibility: visible;
+  }
+}
+
+.lightbox-dark {
+  background: $black-80;
+
+  .description {
+    &::before {
+      background: $white-50;
+    }
+  }
+
+  .image-wrapper {
+    background: $black;
+  }
+}

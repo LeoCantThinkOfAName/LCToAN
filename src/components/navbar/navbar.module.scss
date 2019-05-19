@@ -1,0 +1,65 @@
+@import "../../styles/variables.scss";
+
+.main-nav,
+.main-nav-dark {
+  border-bottom: 1px solid $black-50;
+  margin: 0 0 1.5rem;
+  padding: 1rem 0;
+  width: 100%;
+
+  span {
+    background: $black;
+    border-radius: 50%;
+    display: block;
+    height: 3px;
+    margin: 0 1rem;
+    width: 3px;
+  }
+
+  ul {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    align-items: center;
+    display: flex;
+    list-style-type: none;
+
+    &:nth-last-of-type(1) {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    color: $black;
+    font-family: $serif;
+    font-size: 1.25rem;
+    text-decoration: none;
+
+    &:hover {
+      color: $black-50;
+    }
+  }
+}
+
+.main-nav-dark {
+  border-bottom: 1px solid $white-50;
+
+  span {
+    background: $white;
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $white-80;
+    }
+  }
+}

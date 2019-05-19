@@ -1,0 +1,24 @@
+@import "../../styles//variables.scss";
+
+.main-content,
+.main-content-dark {
+  display: flex;
+  flex-grow: 1;
+  padding: 2rem 0;
+
+  & > div {
+    flex-basis: 1;
+    width: 100%;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      height: auto;
+    }
+  }
+}
+
+.main-content-dark {
+  color: $white;
+}

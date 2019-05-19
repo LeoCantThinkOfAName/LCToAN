@@ -1,0 +1,18 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 1s ease-in-out;
+  z-index: -1;
+}
+
+.canvas {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 1280px) {
+  .strip {
+    left: calc(100vw / 2 - 640px);
+  }
+}

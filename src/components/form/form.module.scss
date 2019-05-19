@@ -1,0 +1,71 @@
+@import "../../styles/variables.scss";
+
+.form-wrapper {
+  text-align: center;
+
+  h2 {
+    text-align: left;
+  }
+}
+
+.field-wrapper {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 100%;
+
+  label {
+    margin: 1.5rem 0 0.5rem;
+    text-transform: capitalize;
+  }
+
+  input,
+  textarea {
+    background: $white-50;
+    border: 1px solid $black-20;
+    font-size: 1rem;
+    outline: none;
+    padding: 1rem 0.5rem;
+    transition: 0.5s ease-in-out;
+    width: 100%;
+
+    &:focus {
+      background: $white-80;
+    }
+  }
+
+  textarea {
+    min-height: 10rem;
+    min-width: 100%;
+  }
+
+  .error {
+    background: $warn-20;
+    border: 1px solid $warn;
+
+    &::placeholder {
+      color: $warn;
+      font-weight: 800;
+    }
+  }
+}
+
+.form-btn {
+  background: $white-50;
+  border: 1px solid $black-20;
+  cursor: pointer;
+  font-size: 1rem;
+  outline: none;
+  padding: 1rem 3rem;
+  margin: 2rem 0;
+  transition: 0.5s ease-in-out;
+
+  &:hover {
+    background: $white;
+  }
+}
+
+.honey-field {
+  display: none;
+}
