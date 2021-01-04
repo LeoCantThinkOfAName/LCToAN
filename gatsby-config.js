@@ -34,11 +34,11 @@ module.exports = {
   plugins: [
     "gatsby-plugin-typescript",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-remark-images",
     "gatsby-transformer-remark",
     "gatsby-plugin-glslify",
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-layout",
       options: {
@@ -51,10 +51,10 @@ module.exports = {
         name: "gatsby-starter-typescript-pwa",
         short_name: "starter",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#efefefe",
+        theme_color: "#efefefe",
         display: "minimal-ui",
-        icon: "src/images/gatsby-icon.png" // This path is relative to the root of the site.
+        icon: "src/images/icon.png" // This path is relative to the root of the site.
       }
     },
     {
