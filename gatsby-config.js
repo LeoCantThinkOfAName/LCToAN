@@ -1,87 +1,129 @@
 module.exports = {
+  flags: {PRESERVE_WEBPACK_CACHE: true},
   siteMetadata: {
-    title: `LCTOAN.`,
-    description: `LCTOAN. short for Leo can't think of a name (which is, obvious a silliest user name one can make), is a self taught web developer, currently working for one of the leading travel associated information company based on Taiwan. Leo mostly working for the front-end side`,
-    author: `LCTOAN.`,
+    title: "LCTOAN.",
+    description: "This is my rpofolio website!",
+    author: "LCTOAN., Leo Lin",
+    social: [
+      {
+        type: "mail",
+        title: "Email",
+        url: "mailto:lctoan.com@gmail.com",
+        icon: "FaEnvelope"
+      },
+      {
+        type: "external-link",
+        title: "Github",
+        url: "https://github.com/leocantthinkofaname",
+        icon: "FaGithub"
+      },
+      // {
+      //   type: "external-link",
+      //   title: "Youtube",
+      //   url: "https://youtube.com",
+      //   icon: "FaYoutube"
+      // },
+      // {
+      //   type: "external-link",
+      //   title: "Blog",
+      //   url: "https://pedestrian.com",
+      //   icon: "FaGlobe"
+      // }
+    ]
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-remark-images",
+    "gatsby-transformer-remark",
+    "gatsby-plugin-glslify",
     {
-      resolve: `gatsby-plugin-layout`,
+      resolve: "gatsby-plugin-layout",
       options: {
-        component: require.resolve(`./src/components/layout.js`),
-      },
+        component: require.resolve("./src/components/Layout.tsx")
+      }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        name: "gatsby-starter-typescript-pwa",
+        short_name: "starter",
+        start_url: "/",
+        background_color: "#663399",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "src/images/gatsby-icon.png" // This path is relative to the root of the site.
+      }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-offline",
       options: {
-        name: `works`,
-        path: `${__dirname}/src/works`,
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 100,
-            },
-          },
+        appendScript: require.resolve("./src/service-worker.js")
+      }
+    },
+    {
+      resolve: "gatsby-plugin-graphql-codegen",
+      options: {
+        codegen: true,
+        documentPaths: [
+          "./src/**/*.{ts,tsx}",
+          "./node_modules/gatsby-*/**/*.js"
         ],
-      },
+        fileName: "generated/graphql-type.ts"
+      }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-intl",
       options: {
-        name: `blog`,
-        path: `${__dirname}/src/blog`,
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 100,
-            },
-          },
-        ],
-      },
+        path: `${__dirname}/src/lang`,
+        languages: ["en", "zh-TW"],
+        defaultLanguage: "en"
+      }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-emotion",
       options: {
-        name: `Leo Can't Think Of A Name`,
-        short_name: `LCTOAN.`,
-        start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#fff`,
-        display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
-      },
+        sourceMap: true,
+        cssPropOptimization: true,
+        minification: true,
+        contextualClassName: true,
+        componentsAsSelector: true,
+        deadCodeElimination: true
+      }
     },
-    "gatsby-plugin-sass",
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "code-",
-              inlineCodeMarker: null,
-              showLineNumbers: true,
-              noInlineHighlight: false,
-            },
-          },
-        ],
-      },
+        google: {
+          families: ["Lato", "Noto Sans TC"]
+        }
+      }
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
-}
+    /**
+     * SOURCING FILESYSTEM
+     */
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "root",
+        path: `${__dirname}/src`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "contents",
+        path: `${__dirname}/src/contents`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`
+      }
+    }
+  ]
+};

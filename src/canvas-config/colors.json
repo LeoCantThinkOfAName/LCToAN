@@ -1,0 +1,10 @@
+{
+  "gradients": [
+    {
+      "top": "red",
+      "bottom": "gold",
+      "spot1": "green",
+      "spot2": "blue"
+    }
+  ]
+}
