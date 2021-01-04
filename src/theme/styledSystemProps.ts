@@ -1,6 +1,5 @@
 import {
   BorderRadiusProps,
-  color,
   FontFamilyProps,
   FontSizeProps,
   FontStyleProps,

@@ -1,4 +1,5 @@
-import { colors } from "./colors";
+import { defaultScheme } from "./colors";
+import {StyledSystemProps} from './styledSystemProps';
 
 export const fontFamilies: { heading: string; body: string } = {
   heading: "Montserrat, serif",
@@ -28,7 +29,7 @@ export const typographyStyles: TypographyStyles = {
   H2: {
     fontSize: [37, 39, 41, 43],
     fontWeight: 700,
-    color: colors.primary,
+    color: defaultScheme.primary,
     fontFamily: fontFamilies.heading,
     as: "h2",
   },
@@ -41,7 +42,7 @@ export const typographyStyles: TypographyStyles = {
   H4: {
     fontSize: [18, 20, 22, 24],
     fontWeight: 700,
-    color: colors.primary,
+    color: defaultScheme.primary,
     fontFamily: fontFamilies.heading,
     as: "h4",
   },
@@ -77,7 +78,7 @@ export const typographyStyles: TypographyStyles = {
   },
   Link: {
     fontWeight: 700,
-    color: colors.primary,
+    color: defaultScheme.primary,
     fontSize: [14, 15, 15, 16],
     fontFamily: fontFamilies.body,
   },

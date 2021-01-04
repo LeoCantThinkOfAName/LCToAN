@@ -2063,8 +2063,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
@@ -2223,8 +2221,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata: SiteMetadata;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   flags?: Maybe<SiteFlags>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
@@ -2471,8 +2467,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___internal___mediaType'
   | 'siteMetadata___internal___owner'
   | 'siteMetadata___internal___type'
-  | 'port'
-  | 'host'
   | 'flags___PRESERVE_WEBPACK_CACHE'
   | 'polyfill'
   | 'pathPrefix'
@@ -2566,8 +2560,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
@@ -3088,7 +3080,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___packageJson___description'
   | 'pluginCreator___packageJson___version'
   | 'pluginCreator___packageJson___main'
-  | 'pluginCreator___packageJson___author'
   | 'pluginCreator___packageJson___license'
   | 'pluginCreator___packageJson___dependencies'
   | 'pluginCreator___packageJson___dependencies___name'
@@ -3323,7 +3314,6 @@ export type SitePluginFieldsEnum =
   | 'packageJson___description'
   | 'packageJson___version'
   | 'packageJson___main'
-  | 'packageJson___author'
   | 'packageJson___license'
   | 'packageJson___dependencies'
   | 'packageJson___dependencies___name'
@@ -3366,7 +3356,6 @@ export type SitePluginPackageJson = {
   description?: Maybe<Scalars['String']>;
   version?: Maybe<Scalars['String']>;
   main?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
   dependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDependencies>>>;
   devDependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDevDependencies>>>;
@@ -3407,7 +3396,6 @@ export type SitePluginPackageJsonFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   version?: Maybe<StringQueryOperatorInput>;
   main?: Maybe<StringQueryOperatorInput>;
-  author?: Maybe<StringQueryOperatorInput>;
   license?: Maybe<StringQueryOperatorInput>;
   dependencies?: Maybe<SitePluginPackageJsonDependenciesFilterListInput>;
   devDependencies?: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>;

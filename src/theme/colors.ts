@@ -1,13 +1,11 @@
-import * as CSS from "csstype";
-
 export interface ThemeColors {
-  text: CSS.ColorProperty;
-  primary: CSS.ColorProperty;
-  secondary: CSS.ColorProperty;
-  background: CSS.ColorProperty;
-  link: CSS.ColorProperty;
-  white: CSS.ColorProperty;
-  black: CSS.ColorProperty;
+  text: string;
+  primary: string;
+  secondary: string;
+  background: string;
+  link: string;
+  white: string;
+  black: string;
 }
 
 export const defaultScheme: ThemeColors = {
