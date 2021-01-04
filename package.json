@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@loadable/component": "^5.14.1",
     "babel-plugin-emotion": "^10.0.29",
     "emotion-normalize": "^10.1.0",
     "gatsby": "^2.15.28",
@@ -45,6 +46,7 @@
     "three": "^0.114.0"
   },
   "devDependencies": {
+    "@types/loadable__component": "^5.13.1",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-helmet": "^5.0.10",
