@@ -1,12 +1,12 @@
-import { graphql } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
-import React from "react";
-import Masonry from "react-masonry-css";
+import { graphql } from "gatsby"
+import { useIntl } from "gatsby-plugin-intl"
+import React from "react"
+import Masonry from "react-masonry-css"
 
-import Card from "../components/Card";
-import SEO from "../components/SEO";
-import TransitionContainer from "../components/TransitionContainer";
-import worksDataTransformer from "../utils/worksDataTransformer";
+import Card from "../components/Card"
+import SEO from "../components/SEO"
+import TransitionContainer from "../components/TransitionContainer"
+import worksDataTransformer from "../utils/worksDataTransformer"
 
 export const query = graphql`
   query Work {
@@ -36,15 +36,15 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 interface WorkProps {
-  data: any;
+  data: any
 }
 
 export const WorksPage: React.FC<WorkProps> = ({ data }) => {
-  const works = worksDataTransformer(data);
-  const intl = useIntl();
+  const works = worksDataTransformer(data)
+  const intl = useIntl()
 
   return (
     <TransitionContainer>
@@ -66,7 +66,7 @@ export const WorksPage: React.FC<WorkProps> = ({ data }) => {
         ))}
       </Masonry>
     </TransitionContainer>
-  );
-};
+  )
+}
 
-export default WorksPage;
+export default WorksPage

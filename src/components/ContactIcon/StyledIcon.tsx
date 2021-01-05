@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-const StyledIcon = styled.a`
+const StyledIcon = styled(OutboundLink)`
   color: ${({ theme }) => theme.colors.text};
   font-size: 1.5rem;
   margin-right: 1rem;
@@ -8,6 +9,6 @@ const StyledIcon = styled.a`
   &:hover {
     opacity: 0.8;
   }
-`;
+`
 
-export default StyledIcon;
+export default StyledIcon

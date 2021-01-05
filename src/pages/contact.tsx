@@ -1,15 +1,15 @@
-import { graphql, useStaticQuery } from "gatsby";
-import { FormattedMessage, useIntl } from "gatsby-plugin-intl";
-import React from "react";
+import { graphql, useStaticQuery } from "gatsby"
+import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
+import React from "react"
 
-import { SiteMetaQuery } from "../../generated/graphql-type";
-import ContactIcon from "../components/ContactIcon";
-import SEO from "../components/SEO";
-import { StyledList } from "../components/Styled";
-import TransitionContainer from "../components/TransitionContainer";
+import { SiteMetaQuery } from "../../generated/graphql-type"
+import ContactIcon from "../components/ContactIcon"
+import SEO from "../components/SEO"
+import { StyledList } from "../components/Styled"
+import TransitionContainer from "../components/TransitionContainer"
 
 const ContactPage = () => {
-  const intl = useIntl();
+  const intl = useIntl()
   const {
     site: {
       siteMetadata: { social },
@@ -28,8 +28,8 @@ const ContactPage = () => {
           }
         }
       }
-    `,
-  );
+    `
+  )
 
   return (
     <TransitionContainer>
@@ -59,15 +59,15 @@ const ContactPage = () => {
                       title={item.title || ""}
                     />
                   </li>
-                );
+                )
               } else {
-                return null;
+                return null
               }
             })}
         </StyledList>
       </div>
     </TransitionContainer>
-  );
-};
+  )
+}
 
-export default ContactPage;
+export default ContactPage

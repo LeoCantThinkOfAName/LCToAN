@@ -2063,8 +2063,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
@@ -2223,8 +2221,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata: SiteMetadata;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   flags?: Maybe<SiteFlags>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
@@ -2471,8 +2467,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___internal___mediaType'
   | 'siteMetadata___internal___owner'
   | 'siteMetadata___internal___type'
-  | 'port'
-  | 'host'
   | 'flags___PRESERVE_WEBPACK_CACHE'
   | 'polyfill'
   | 'pathPrefix'
@@ -2566,8 +2560,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
@@ -3079,6 +3071,16 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___componentsAsSelector'
   | 'pluginCreator___pluginOptions___deadCodeElimination'
   | 'pluginCreator___pluginOptions___google___families'
+  | 'pluginCreator___pluginOptions___trackingId'
+  | 'pluginCreator___pluginOptions___head'
+  | 'pluginCreator___pluginOptions___anonymize'
+  | 'pluginCreator___pluginOptions___respectDNT'
+  | 'pluginCreator___pluginOptions___exclude'
+  | 'pluginCreator___pluginOptions___pageTransitionDelay'
+  | 'pluginCreator___pluginOptions___defer'
+  | 'pluginCreator___pluginOptions___sampleRate'
+  | 'pluginCreator___pluginOptions___siteSpeedSampleRate'
+  | 'pluginCreator___pluginOptions___cookieDomain'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -3314,6 +3316,16 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___componentsAsSelector'
   | 'pluginOptions___deadCodeElimination'
   | 'pluginOptions___google___families'
+  | 'pluginOptions___trackingId'
+  | 'pluginOptions___head'
+  | 'pluginOptions___anonymize'
+  | 'pluginOptions___respectDNT'
+  | 'pluginOptions___exclude'
+  | 'pluginOptions___pageTransitionDelay'
+  | 'pluginOptions___defer'
+  | 'pluginOptions___sampleRate'
+  | 'pluginOptions___siteSpeedSampleRate'
+  | 'pluginOptions___cookieDomain'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -3477,6 +3489,16 @@ export type SitePluginPluginOptions = {
   componentsAsSelector?: Maybe<Scalars['Boolean']>;
   deadCodeElimination?: Maybe<Scalars['Boolean']>;
   google?: Maybe<SitePluginPluginOptionsGoogle>;
+  trackingId?: Maybe<Scalars['String']>;
+  head?: Maybe<Scalars['Boolean']>;
+  anonymize?: Maybe<Scalars['Boolean']>;
+  respectDNT?: Maybe<Scalars['Boolean']>;
+  exclude?: Maybe<Array<Maybe<Scalars['String']>>>;
+  pageTransitionDelay?: Maybe<Scalars['Int']>;
+  defer?: Maybe<Scalars['Boolean']>;
+  sampleRate?: Maybe<Scalars['Int']>;
+  siteSpeedSampleRate?: Maybe<Scalars['Int']>;
+  cookieDomain?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -3528,6 +3550,16 @@ export type SitePluginPluginOptionsFilterInput = {
   componentsAsSelector?: Maybe<BooleanQueryOperatorInput>;
   deadCodeElimination?: Maybe<BooleanQueryOperatorInput>;
   google?: Maybe<SitePluginPluginOptionsGoogleFilterInput>;
+  trackingId?: Maybe<StringQueryOperatorInput>;
+  head?: Maybe<BooleanQueryOperatorInput>;
+  anonymize?: Maybe<BooleanQueryOperatorInput>;
+  respectDNT?: Maybe<BooleanQueryOperatorInput>;
+  exclude?: Maybe<StringQueryOperatorInput>;
+  pageTransitionDelay?: Maybe<IntQueryOperatorInput>;
+  defer?: Maybe<BooleanQueryOperatorInput>;
+  sampleRate?: Maybe<IntQueryOperatorInput>;
+  siteSpeedSampleRate?: Maybe<IntQueryOperatorInput>;
+  cookieDomain?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
