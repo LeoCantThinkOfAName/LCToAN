@@ -1,7 +1,6 @@
 import styled from "styled-components"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-const StyledIcon = styled(OutboundLink)`
+const StyledIcon = styled.a`
   color: ${({ theme }) => theme.colors.text};
   font-size: 1.5rem;
   margin-right: 1rem;

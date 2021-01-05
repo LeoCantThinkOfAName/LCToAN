@@ -5,8 +5,6 @@ import { WorksData } from "../../types"
 import styled from "styled-components"
 import Modal from "../Modal/index"
 
-import { trackCustomEvent } from "gatsby-plugin-google-analytics"
-
 interface CardProp {
   data: WorksData
 }
@@ -49,18 +47,13 @@ const Card: React.FC<CardProp> = ({ data }) => {
     setOpen,
   }
 
-  const handleClick = (title: string) => {
+  const handleClick = () => {
     setOpen(true)
-    trackCustomEvent({
-      category: "Works Visited",
-      action: "Click",
-      label: title,
-    })
   }
 
   return (
     <ModalContext.Provider value={context}>
-      <StyledDiv onClick={() => handleClick(data.title)} title={title}>
+      <StyledDiv onClick={handleClick} title={title}>
         <Img fluid={thumbnail} />
       </StyledDiv>
       <Modal />
